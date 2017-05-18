@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FABExample"
+             xmlns:controls="clr-namespace:FABExample;assembly:FABExample"
+             x:Class="FABExample.MainPage">
+
+    <AbsoluteLayout VerticalOptions="FillAndExpand"  
+           HorizontalOptions="FillAndExpand">
+        
+        <StackLayout AbsoluteLayout.LayoutFlags="All"  
+            AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Label Text="FAB Example" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <ListView x:Name="MainList" ItemsSource="{Binding LstItems}" />
+
+        </StackLayout>
+
+        <controls:FloatingActionButtonView x:Name="Fab"   
+                       AbsoluteLayout.LayoutFlags="PositionProportional"   
+                       AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"  
+                       ImageName="ic_add.png"  
+                       ColorNormal="Red"  
+                       ColorPressed="Black"
+                       Command="{Binding FabCommand}"
+                       ColorRipple="Red"/>
+    </AbsoluteLayout>
+
+</ContentPage>
